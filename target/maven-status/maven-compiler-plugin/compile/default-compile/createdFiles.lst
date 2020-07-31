@@ -1,0 +1,11 @@
+controller\exceptions\PreexistingEntityException.class
+handler\SeriesTitleHandler.class
+controller\SeriesJpaController.class
+controller\exceptions\NonexistentEntityException.class
+controller\exceptions\IllegalOrphanException.class
+com\mycompany\netflix_soap\resources\JavaEE8Resource.class
+controller\EpisodesJpaController.class
+model\Series.class
+com\mycompany\netflix_soap\JAXRSConfiguration.class
+model\Episodes.class
+service\NetflixService.class

@@ -1,0 +1,1 @@
+web: java -Dswarm.http.port=$PORT -war target/Netflix_Soap-1.0-SNAPSHOT.war

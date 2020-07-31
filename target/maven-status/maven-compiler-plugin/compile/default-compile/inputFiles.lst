@@ -1,0 +1,11 @@
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\com\mycompany\netflix_soap\resources\JavaEE8Resource.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\com\mycompany\netflix_soap\JAXRSConfiguration.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\model\Series.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\model\Episodes.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\controller\exceptions\PreexistingEntityException.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\controller\exceptions\IllegalOrphanException.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\controller\EpisodesJpaController.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\service\NetflixService.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\controller\exceptions\NonexistentEntityException.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\controller\SeriesJpaController.java
+D:\NetBeans\EAM\Project\Netflix_Soap\src\main\java\handler\SeriesTitleHandler.java
