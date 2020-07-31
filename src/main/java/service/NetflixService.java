@@ -21,7 +21,7 @@ import model.Series;
  * @author simra
  */
 @MTOM(enabled = true, threshold = 0)
-@WebService
+@WebService(serviceName = "NetflixService")
 @HandlerChain(file = "NetflixServiceService_handler.xml")
 public class NetflixService {
 
