@@ -75,38 +75,7 @@ public class SeriesJpaController implements Serializable {
             em = getEntityManager();
             em.getTransaction().begin();
             Series persistentSeries = em.find(Series.class, series.getSeriesid());
-            Collection<Episodes> episodesCollectionOld = persistentSeries.getEpisodesCollection();
-            Collection<Episodes> episodesCollectionNew = series.getEpisodesCollection();
-            Collection<Episodes> attachedEpisodesCollectionNew = new ArrayList<Episodes>();
-            if(episodesCollectionNew != null){
-            for (Episodes episodesCollectionNewEpisodesToAttach : episodesCollectionNew) {
-                episodesCollectionNewEpisodesToAttach = em.getReference(episodesCollectionNewEpisodesToAttach.getClass(), episodesCollectionNewEpisodesToAttach.getEpisodeid());
-                attachedEpisodesCollectionNew.add(episodesCollectionNewEpisodesToAttach);
-            }
-            episodesCollectionNew = attachedEpisodesCollectionNew;
-            series.setEpisodesCollection(episodesCollectionNew);
-            }
             series = em.merge(series);
-              if(episodesCollectionOld != null){
-            for (Episodes episodesCollectionOldEpisodes : episodesCollectionOld) {
-                if (!episodesCollectionNew.contains(episodesCollectionOldEpisodes)) {
-                    episodesCollectionOldEpisodes.setSeriesid(null);
-                    episodesCollectionOldEpisodes = em.merge(episodesCollectionOldEpisodes);
-                }
-            }
-              }
-                 if(episodesCollectionNew != null){
-            for (Episodes episodesCollectionNewEpisodes : episodesCollectionNew) {
-                if (!episodesCollectionOld.contains(episodesCollectionNewEpisodes)) {
-                    Series oldSeriesidOfEpisodesCollectionNewEpisodes = episodesCollectionNewEpisodes.getSeriesid();
-                    episodesCollectionNewEpisodes.setSeriesid(series);
-                    episodesCollectionNewEpisodes = em.merge(episodesCollectionNewEpisodes);
-                    if (oldSeriesidOfEpisodesCollectionNewEpisodes != null && !oldSeriesidOfEpisodesCollectionNewEpisodes.equals(series)) {
-                        oldSeriesidOfEpisodesCollectionNewEpisodes.getEpisodesCollection().remove(episodesCollectionNewEpisodes);
-                        oldSeriesidOfEpisodesCollectionNewEpisodes = em.merge(oldSeriesidOfEpisodesCollectionNewEpisodes);
-                    }
-                }
-            }}
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
