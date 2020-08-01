@@ -21,7 +21,7 @@ import model.Series;
  * @author simra
  */
 @MTOM(enabled = true, threshold = 0)
-@WebService(serviceName = "NetflixServiceService")
+@WebService(serviceName = "NetflixServiceService",wsdlLocation = "https://project-eam.herokuapp.com/NetflixServiceService")
 @HandlerChain(file = "NetflixServiceService_handler.xml")
 public class NetflixService {
 
